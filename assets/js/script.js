@@ -15,6 +15,14 @@ function activateTile(color) {
   }, 300);
 }
 
+function playRound(nextSequence) {
+  nextSequence.forEach((color, i) => {
+    setTimeout(() => {
+      activateTile(color);
+    }, (i++) * 600);
+  });
+}
+
 function nextStep() {
   const tiles = ['red', 'blue', 'green', 'yellow'];
   const random = tiles[Math.floor(Math.random() * tiles.length)]
