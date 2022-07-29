@@ -5,6 +5,8 @@ let level = 0;
 const startButton = document.querySelector('.js-start');
 const info = document.querySelector('.js-info');
 
+startButton.addEventListener('click', startGame);
+
 function activateTile(color) {
   const tile = document.querySelector(`[data-tile='${color}']`);
   const sound = document.querySelector(`[data-sound='${color}']`);
@@ -35,12 +37,12 @@ function nextRound() {
 
   const nextSequence = [...sequence]
   nextSequence.push(nextStep());
+  playRound(nextSequence);
 }
 
 function startGame() {
   startButton.classList.add('hidden');
   info.classList.remove('hidden');
   info.textContent = 'Wait for the computer';
+  nextRound();
 }
-
-startButton.addEventListener('click', startGame);
