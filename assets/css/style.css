@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 body {
-  display: inline-block;
+  display: flex;
   justify-content: center;
   font-family: 'Oswald', sans-serif;
+}
+
+#game {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
